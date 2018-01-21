@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.stasiamba.model.Customer" table="customers">
+        <id name="id" column="customer_id" type="java.lang.Long">
+            <generator class="native"/>
+        </id>
+
+        <property name="name" column="customer_name" type="java.lang.String"/>
+
+        <set name="projects" cascade="save-update" table="customer_project">
+            <key column="customer_id" />
+            <many-to-many column="project_id" class="com.stasiamba.model.Project"/>
+        </set>
+    </class>
+
+</hibernate-mapping>

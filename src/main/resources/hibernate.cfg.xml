@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hometask3?serverTimezone=UTC
+        </property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">111</property>
+
+        <!-- List of XML mapping files -->
+        <mapping resource="Developer.hbm.xml"/>
+        <mapping resource="Skill.hbm.xml"/>
+        <mapping resource="Project.hbm.xml"/>
+        <mapping resource="Customer.hbm.xml"/>
+        <mapping resource="Company.hbm.xml"/>
+
+        <!-- List of mapping classes-->
+        <mapping class="com.stasiamba.model.Developer"/>
+        <mapping class="com.stasiamba.model.Skill"/>
+        <mapping class="com.stasiamba.model.Project"/>
+        <mapping class="com.stasiamba.model.Customer"/>
+        <mapping class="com.stasiamba.model.Company"/>
+
+    </session-factory>
+</hibernate-configuration>

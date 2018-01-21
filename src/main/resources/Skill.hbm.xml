@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="com.stasiamba.model.Skill" table="skills">
+        <id name="id" column="skill_id" type="java.lang.Long">
+            <generator class="native"/>
+        </id>
+
+        <property name="name" column="skill_name" type="java.lang.String"/>
+
+        <set name="developers" cascade="save-update" table="dev_skill">
+            <key column="skill_id" />
+            <many-to-many column="developer_id" class="com.stasiamba.model.Developer"/>
+        </set>
+    </class>
+</hibernate-mapping>
