@@ -18,50 +18,25 @@ public class Main {
         GenericDAO customerDAO = new ModelDAO<Customer>(Customer.class);
         GenericDAO companyDAO = new ModelDAO<Company>(Company.class);
 
-
-
-        Developer d1 = new Developer(
-                "Ivan", "Ivanov", new BigDecimal(3000));
-        devDAO.create(d1);
-
-        Skill s1 = new Skill("Java");
-        skillDAO.create(s1);
-
-        Project p1 = new Project("Relax");
-        projectDAO.create(p1);
-
-        Customer cu1 = new Customer("Zakazchik");
-        customerDAO.create(cu1);
-
-        Company co1 = new Company("Google");
-        companyDAO.create(co1);
-
-        Developer d = (Developer) devDAO.read(1L);
-        Skill s = (Skill) skillDAO.read(1L);
-        Project p = (Project) projectDAO.read(1L);
-        Customer cu = (Customer) customerDAO.read(1L);
-        Company co = (Company) companyDAO.read(1L);
-
         Set<Developer> developers = new HashSet<Developer>();
         Set<Skill> skills = new HashSet<Skill>();
         Set<Project> projects = new HashSet<Project>();
         Set<Customer> customers = new HashSet<Customer>();
         Set<Company> companies = new HashSet<Company>();
 
-        skills.add(s);
-        d.setSkills(skills);
-        devDAO.update(d);
+//        Project project = (Project) projectDAO.read(2L);
+//        Customer customer = new Customer("Jora");
+//        customers.add(customer);
+//        project.setCustomers(customers);
 
-        developers.add(d);
-        customers.add(cu);
-        companies.add(co);
+//        projectDAO.update(project);
 
-        p.setCompanies(companies);
-        p.setCustomers(customers);
-        p.setDevelopers(developers);
 
-        projectDAO.update(p);
+        System.out.println(devDAO.read(2L));
 
+
+
+//        System.out.println(projectDAO.getAll());
 
         System.exit(0);
 

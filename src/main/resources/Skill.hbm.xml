@@ -12,7 +12,7 @@
 
         <property name="name" column="skill_name" type="java.lang.String"/>
 
-        <set name="developers" cascade="save-update" table="dev_skill">
+        <set name="developers" cascade="save-update" table="dev_skill" lazy="true">
             <key column="skill_id" />
             <many-to-many column="developer_id" class="com.stasiamba.model.Developer"/>
         </set>

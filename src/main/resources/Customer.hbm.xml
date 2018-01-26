@@ -11,7 +11,7 @@
 
         <property name="name" column="customer_name" type="java.lang.String"/>
 
-        <set name="projects" cascade="save-update" table="customer_project">
+        <set name="projects" cascade="save-update" table="customer_project" lazy="true">
             <key column="customer_id" />
             <many-to-many column="project_id" class="com.stasiamba.model.Project"/>
         </set>

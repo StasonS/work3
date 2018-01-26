@@ -14,12 +14,12 @@
         <property name="lastName" column="last_name" type="java.lang.String"/>
         <property name="salary" column="salary" type="java.math.BigDecimal"/>
 
-        <set name="skills" cascade="save-update" table="dev_skill">
+        <set name="skills" cascade="all" table="dev_skill" lazy="true">
             <key column="developer_id" />
             <many-to-many column="skill_id" class="com.stasiamba.model.Skill"/>
         </set>
 
-        <set name="projects" cascade="save-update" table="project_developer">
+        <set name="projects" cascade="save-update" table="project_developer" lazy="true">
             <key column="developer_id" />
             <many-to-many column="project_id" class="com.stasiamba.model.Project"/>
         </set>

@@ -11,9 +11,19 @@
 
         <property name="name" type="java.lang.String" column="project_name"/>
 
-        <set name="developers" cascade="save-update" table="project_developer">
+        <set name="developers" cascade="save-update" table="project_developer" lazy="true">
             <key column="project_id" />
             <many-to-many column="developer_id" class="com.stasiamba.model.Developer"/>
+        </set>
+
+        <set name="companies" cascade="all" table="company_projects" lazy="true">
+            <key column="project_id"/>
+            <many-to-many column="company_id" class="com.stasiamba.model.Company"/>
+        </set>
+
+        <set name="customers" cascade="save-update" table="customer_project" lazy="true">
+            <key column="project_id"/>
+            <many-to-many column="customer_id" class="com.stasiamba.model.Customer"/>
         </set>
     </class>
 </hibernate-mapping>
