@@ -89,9 +89,6 @@ public class Project {
         return "Project{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", developers=" + developers +
-                ", customers=" + customers +
-                ", companies=" + companies +
                 '}';
     }
 }

@@ -13,4 +13,6 @@ public interface GenericDAO<T, ID> {
     void delete(T t);
 
     List<T> getAll();
+
+    public Class<T> getType();
 }

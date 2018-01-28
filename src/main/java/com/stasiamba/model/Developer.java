@@ -99,8 +99,6 @@ public class Developer {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", salary=" + salary +
-                ", skills=" + skills +
-                ", projects=" + projects +
                 '}';
     }
 }

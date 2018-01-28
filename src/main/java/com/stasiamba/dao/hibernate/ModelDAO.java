@@ -19,7 +19,7 @@ public class ModelDAO<T> implements GenericDAO<T, Long> {
         this.type = type;
     }
 
-    private Class<T> getType() {
+    public Class<T> getType() {
         return this.type;
     }
 
